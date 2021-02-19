@@ -24,19 +24,19 @@ def parse_testcase(parent_dir):
         print(e)
         print(f'Please create a testcase.py file in {parent_dir}')
     
-    testcases = {}
+    testcases = {"functions": []}
 
     for line in lines:
         if '#' in line:
             question_number = line[2:]
             testcases[question_number] = []
-        else:
+        elif line:
             question_number = list(testcases.keys())[-1]
             testcases[question_number].append(line)
-    
-    for k, v in testcases.items():
-        testcases[k] = '\n'.join(v)
-    
+            function = line.split('(')[1]
+            if function not in testcases['functions']:
+                testcases['functions'].append(function)
+                
     return testcases
 
 
