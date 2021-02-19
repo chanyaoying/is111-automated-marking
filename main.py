@@ -1,12 +1,6 @@
-
-import os
-import sys
-import shutil
-import json
-from preprocessing import split_py_files_by_name, change_question_name
-from utility import mark_question, parse_testcase, confirmation
-
-# lab_number = input('Which lab assignment are you marking? ')
+import os, sys, shutil, json
+from preprocessing import *
+from utility import *
 
 ##############################################
 # SETTINGS
@@ -31,27 +25,13 @@ if __name__ == "__main__":
             dirs = list(filter(lambda file: file.endswith(
                 '_'), os.listdir(parent_dir)))
 
-        # extract test case
         testcases = parse_testcase(parent_dir)
+        # print(json.dumps(testcases, indent=4))
+        # exit()
+
         question_names = list(testcases.keys())
 
-        need_rename = {}
-
-        for student in dirs:
-            student_path = os.path.join(parent_dir, student)
-            # change question name
-            unable = change_question_name(student_path, question_names)
-            if unable:
-                need_rename[student] = unable
-
-        if need_rename:
-            print("These files need to be renames to their question number: ")
-            print(json.dumps(need_rename, indent=4))
-            answer = confirmation(
-                'Continue marking without renaming the above files? (y/n): ')
-            if not answer:
-                print("Exiting...")
-                exit()
+        rename(dirs, parent_dir, question_names)
 
         for student in dirs:
             student_path = os.path.join(parent_dir, student)
@@ -59,13 +39,20 @@ if __name__ == "__main__":
             solution_files = os.listdir(student_path)
 
             for solution_file in solution_files:
-
-                # per question
                 solution_file_path = os.path.join(student_path, solution_file)
 
                 # count and remove print statements
+                prints = 0
+                code = ''
                 with open(solution_file_path, 'r') as file:
-                    code = [line for line in file.readlines()
-                            if line.find("print") == -1]
+                    for line in file.readlines():
+                        if line.find("print") != -1:
+                            prints += 1
+                        else:
+                            code += line
+
                 code = ''.join(code)
-                exec(code)
+
+                print(solution_file)
+                print(prints)
+                exit()

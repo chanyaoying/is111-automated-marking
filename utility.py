@@ -1,4 +1,25 @@
-import os, sys, shutil
+import os, sys, shutil, json
+from preprocessing import *
+
+
+def rename(dirs, parent_dir, question_names):
+    need_rename = {}
+
+    for student in dirs:
+        student_path = os.path.join(parent_dir, student)
+        # change question name
+        unable = change_question_name(student_path, question_names)
+        if unable:
+            need_rename[student] = unable
+
+    if need_rename:
+        print("These files need to be renames to their question number: ")
+        print(json.dumps(need_rename, indent=4))
+        answer = confirmation(
+            'Continue marking without renaming the above files? (y/n): ')
+        if not answer:
+            print("Exiting...")
+            exit()
 
 
 def confirmation(question):
@@ -11,7 +32,6 @@ def confirmation(question):
     else:
         print("Please enter either 'y' or 'n'.")
         confirmation(question)
-
 
 
 def parse_testcase(parent_dir):
@@ -36,7 +56,7 @@ def parse_testcase(parent_dir):
             function = line.split('(')[1]
             if function not in testcases['functions']:
                 testcases['functions'].append(function)
-                
+
     return testcases
 
 
