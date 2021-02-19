@@ -1,68 +1,71 @@
-import pandas as pd
+
 import os
-import threading
-import time
-import pyautogui
+import sys
+import shutil
+import json
+from preprocessing import split_py_files_by_name, change_question_name
+from utility import mark_question, parse_testcase, confirmation
+
+# lab_number = input('Which lab assignment are you marking? ')
+
+##############################################
+# SETTINGS
+
+lab_number = 4
+current_directory = '.'
 
 
-def mark_question(q, script, test_cases, max_marks=False):
-    """
-    ----
-    q:
-    <class 'str'>
-    The question number.
-    ----
-    script:
-    <class 'str'>
-    The script to mark against. Indentation and everything must be there.
-    ----
-    test_cases:
-    <class 'list'>
-    A list of test cases, which are strings.
-    ----
-    max_marks: (not implemented yet)
-    <class 'bool'>
-    Defaults to false. If true, the maximum marks corresponds to the number of test cases. If false, the marks can only be 1 or 0.
-    ----
-    """
-    try:
-        marks = 0
+##############################################
 
-        for i in range(len(test_cases)):
+if __name__ == "__main__":
 
-            test_case = test_cases[i]
+    if lab_number < 14:
 
-            try:
-                exec(script)
-                print(f"Passed test case no.{i + 1}")
-                marks += 1
-            except:
-                print(f"Failed test case no.{i + 1}")
+        lab_number = 'lab' + str(lab_number)
+        parent_dir = os.path.join('./labs', lab_number)
 
-    except:
-        print(f"Failed to mark {q}.")
-        # push 0 marks
-    finally:
-        print(f"Marked {q}. Marks: {marks}")
+        dirs = list(filter(lambda file: file.endswith(
+            '_'), os.listdir(parent_dir)))
+        if not dirs:
+            split_py_files_by_name(lab_number)
+            dirs = list(filter(lambda file: file.endswith(
+                '_'), os.listdir(parent_dir)))
 
-code = """
-x = "hello world"
-print(x)
-"""
-mark_question('q1.1-test', code, ['yay', 'nay'])
+        # extract test case
+        testcases = parse_testcase(parent_dir)
+        question_names = list(testcases.keys())
 
+        need_rename = {}
 
-# 0. set up with lab to mark
-# lab_number = int(input("Which lab will you be marking?"))
+        for student in dirs:
+            student_path = os.path.join(parent_dir, student)
+            # change question name
+            unable = change_question_name(student_path, question_names)
+            if unable:
+                need_rename[student] = unable
 
-# 0.5 load test case and test_scripts
+        if need_rename:
+            print("These files need to be renames to their question number: ")
+            print(json.dumps(need_rename, indent=4))
+            answer = confirmation(
+                'Continue marking without renaming the above files? (y/n): ')
+            if not answer:
+                print("Exiting...")
+                exit()
 
-# 1. for loop to mark through the students' labs
+        for student in dirs:
+            student_path = os.path.join(parent_dir, student)
 
+            solution_files = os.listdir(student_path)
 
-# 2. check against test case
-# path = f"./labs/lab{lab_number}/test_case.py"
+            for solution_file in solution_files:
 
-# 3. allocate marks
+                # per question
+                solution_file_path = os.path.join(student_path, solution_file)
 
-# 4. export into csv (with same basic analysis? Highlight students who scored 0, give comments)
+                # count and remove print statements
+                with open(solution_file_path, 'r') as file:
+                    code = [line for line in file.readlines()
+                            if line.find("print") == -1]
+                code = ''.join(code)
+                exec(code)
