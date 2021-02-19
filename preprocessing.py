@@ -33,7 +33,7 @@ def split_py_files_by_name(lab_number):
     
     parent_dir = os.path.join('./labs', lab_number)
 
-    py_files = list(filter(lambda file: file.endswith('.py') ,os.listdir(parent_dir)))
+    py_files = list(filter(lambda file: file.endswith('.py') and file != 'testcase.py',os.listdir(parent_dir)))
     
     if len(py_files) == 1:
         print("There are no files. You need to extract the zip file.")
@@ -41,9 +41,12 @@ def split_py_files_by_name(lab_number):
         exit()
     
     dirs_info = [file.split('-') for file in py_files]
+    # print(dirs_info)
+    # dirs_info.remove(dirs_info.index(['testcase.py']))
 
     names = []
     for file in dirs_info:
+        print(file)
         names.append(file[2].strip())
 
     names = list(set(names))
