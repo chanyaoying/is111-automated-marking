@@ -3,7 +3,6 @@ import sys
 import shutil
 import json
 import logging
-from preprocessing import *
 
 
 def confirmation(question):
@@ -17,7 +16,7 @@ def confirmation(question):
         return True
     else:
         print("Please enter either 'y' or 'n'.")
-        confirmation(question)
+        return confirmation(question)
 
 
 def parse_testcase(parent_dir):

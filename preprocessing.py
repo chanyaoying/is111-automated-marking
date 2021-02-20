@@ -33,18 +33,25 @@ def handle_prints_and_inputs(student_path, solution_file):
         originals_path = os.path.join(student_path, 'original_solutions')
         
         try:
-            os.mkdir(student_path)
+            # create 'original_solutions' folder
+            os.mkdir(originals_path)
             logging.info("Created a folder with the original solution")
         except OSError as e:
-            logging.info(e)
+            logging.warn(e)
         except Exception as e:
             logging.error(e)
         finally:
+            # original solution path
+            new_path = os.path.join(originals_path, solution_file)
+            
+            # move original solutions into 'original_solutions'
+            shutil.move(solution_file_path, new_path)
+            logging.info(f"Moved original {solution_file} from {solution_file_path} to {new_path}")
+
             # create copies that have no print() or input()
-            file_name = os.path.join(originals_path, solution_file)
-            with open(file_name, 'w') as file:
+            with open(solution_file_path, 'w') as file:
                 file.write(code)
-            logging.info(f'Created copies without print() and input() in {file_name}')
+            logging.info(f'Created copies without print() and input() in {new_path}')
 
     return prints, inputs
 
@@ -79,16 +86,14 @@ def change_question_name(student_solution_dir, question_names):
     student_solution_dir (str): the path with the solutions of the student
     question_names (list)
     """
-    student_name = student_solution_dir.split(
-        '\\')[-1]  # might not work on macOS
+
     student_solutions = os.listdir(student_solution_dir)
 
     unable = student_solutions.copy()
 
     for file in student_solutions:
         for question_name in question_names:
-            # [1:] to get rid of 'functions', which is the first key of the testcases dict
-            search_key = f"{'.'.join(question_name.split('_'))}"
+            search_key = f"{'.'.join(question_name.split('_'))[1:]}"
             if file.find(search_key) != -1:
                 src = os.path.join(student_solution_dir, file)
                 dest = os.path.join(student_solution_dir,

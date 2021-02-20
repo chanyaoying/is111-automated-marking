@@ -40,7 +40,11 @@ if lab_number < 14:
     result = {}
 
     for student in dirs:
+
         student_path = os.path.join(parent_dir, student)
+
+        # whether or not original_solutions exist
+        using_original = 'original_solutions' in os.listdir(student_path)
 
         solution_files = list(filter(lambda file: file.startswith(
             'q') and file.endswith('.py'), os.listdir(student_path)))
@@ -50,13 +54,25 @@ if lab_number < 14:
 
         for solution_file in solution_files:  # for each question
 
-            logging.info(f"Marking {solution_file} for {student} now.")
-
-            if solution_file == "__pycache__" or solution_file.find('original') != -1:
+            if not solution_file.endswith('.py'):
                 continue
 
+            # all files must be .py files now.
             solution_file_path = os.path.join(student_path, solution_file)
             question = solution_file.rstrip('.py')
+
+            # if 'original_solutions' exist and
+            # if solution_file in original_solutions, delete current one, move original here, continue
+            if using_original and solution_file in os.listdir(os.path.join(student_path, "original_solutions")):
+                logging.info(
+                    f"{solution_file} is in {os.listdir(os.path.join(student_path, 'original_solutions'))}")
+                os.remove(solution_file_path)
+                shutil.move(os.path.join(os.path.join(
+                    student_path, 'original_solutions'), solution_file), student_path)
+                logging.info(
+                    f"Moved {os.path.join(os.path.join(student_path, 'original_solutions'), solution_file)} to {student_path}")
+
+            logging.info(f"Marking {solution_file} for {student} now.")
 
             # the student attempted this
             if question in attempted:
