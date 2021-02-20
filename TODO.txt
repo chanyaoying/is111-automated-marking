@@ -1,0 +1,9 @@
+main:
+    - handle double submissions (look only at the later ones)
+
+report:
+    - analysis in another sheet
+
+testing:
+    - test with all
+    - test lab5
