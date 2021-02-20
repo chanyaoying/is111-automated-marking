@@ -6,13 +6,13 @@ import logging
 from utility import confirmation
 
 
-def handle_prints_and_inputs(student_path, solution_file):
+def parse(student_path, solution_file):
     """
     Creates a copy of the code without input() and print() functions, and marks that copy. Will save the original copy with a '-original' tag.
     Returns the number of prints and inputs respectively.
     """
     # initialise
-    prints, inputs, code = 0, 0, ''
+    prints, inputs, no_of_lines, code = 0, 0, 0, ''
 
     solution_file_path = os.path.join(student_path, solution_file)
 
@@ -26,6 +26,7 @@ def handle_prints_and_inputs(student_path, solution_file):
                 inputs += 1
                 code += 'pass\n' # replace that line with input() with pass
             else:
+                no_of_lines += 1
                 code += line
 
     if prints or inputs:
@@ -53,7 +54,7 @@ def handle_prints_and_inputs(student_path, solution_file):
                 file.write(code)
             logging.info(f'Created copies without print() and input() in {new_path}')
 
-    return prints, inputs
+    return prints, inputs, no_of_lines
 
 
 def rename(dirs, parent_dir, question_names):

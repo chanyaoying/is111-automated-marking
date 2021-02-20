@@ -82,7 +82,7 @@ if lab_number < 14:
             stats = {'errors': [], 'prints': 0, 'inputs': 0}
 
             # store number of prints and inputs in the question. Original copies are created if there are any.
-            stats['prints'], stats['inputs'] = handle_prints_and_inputs(
+            stats['prints'], stats['inputs'], stats['no_of_lines'] = parse(
                 student_path, solution_file)
 
             # load test cases for the question
@@ -109,12 +109,14 @@ if lab_number < 14:
                 "errors": ['Question not attempted'],
                 "prints": 0,
                 "inputs": 0,
+                "no_of_lines": 0,
                 "score": 0,
                 "percentage": 0
             }
         result[student.replace('_', ' ').rstrip() + ' _'] = student_stats
 
 report(result, parent_dir)
+print("Done. Please check the logs.")
 logging.info('Process ends.')
 logging.info(
     '========================================================================')
