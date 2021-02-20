@@ -6,13 +6,15 @@ import logging
 from utility import confirmation
 
 
-def handle_prints_and_inputs(solution_file_path):
+def handle_prints_and_inputs(student_path, solution_file):
     """
     Creates a copy of the code without input() and print() functions, and marks that copy. Will save the original copy with a '-original' tag.
     Returns the number of prints and inputs respectively.
     """
     # initialise
     prints, inputs, code = 0, 0, ''
+
+    solution_file_path = os.path.join(student_path, solution_file)
 
     # opens the original and checks for prints and inputs
     with open(solution_file_path, 'r') as file:
@@ -27,16 +29,22 @@ def handle_prints_and_inputs(solution_file_path):
                 code += line
 
     if prints or inputs:
-        original = solution_file_path.rstrip('.py') + '-original.py'
-        logging.info("Added the '-original' tag to this solution.")
 
-        # create copies with the '-original' tag
-        os.rename(solution_file_path, original)
-
-        # create copies that have no print() or input()
-        with open(solution_file_path, 'w') as file:
-            file.write(code)
-        logging.info('Created copies without print() and input().')
+        originals_path = os.path.join(student_path, 'original_solutions')
+        
+        try:
+            os.mkdir(student_path)
+            logging.info("Created a folder with the original solution")
+        except OSError as e:
+            logging.info(e)
+        except Exception as e:
+            logging.error(e)
+        finally:
+            # create copies that have no print() or input()
+            file_name = os.path.join(originals_path, solution_file)
+            with open(file_name, 'w') as file:
+                file.write(code)
+            logging.info(f'Created copies without print() and input() in {file_name}')
 
     return prints, inputs
 

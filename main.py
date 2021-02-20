@@ -52,7 +52,7 @@ if lab_number < 14:
 
             logging.info(f"Marking {solution_file} for {student} now.")
 
-            if solution_file == "__pycache__" or solution_file.find('-original') != -1:
+            if solution_file == "__pycache__" or solution_file.find('original') != -1:
                 continue
 
             solution_file_path = os.path.join(student_path, solution_file)
@@ -67,7 +67,7 @@ if lab_number < 14:
 
             # store number of prints and inputs in the question. Original copies are created if there are any.
             stats['prints'], stats['inputs'] = handle_prints_and_inputs(
-                solution_file_path)
+                student_path, solution_file)
 
             # load test cases for the question
             question_testcases = testcases[question]
@@ -90,12 +90,12 @@ if lab_number < 14:
 
         for unattempted in attempted:
             student_stats[unattempted] = {
-            "errors": ['Question not attempted'],
-            "prints": 0,
-            "inputs": 0,
-            "score": 0,
-            "percentage": 0
-        }
+                "errors": ['Question not attempted'],
+                "prints": 0,
+                "inputs": 0,
+                "score": 0,
+                "percentage": 0
+            }
         result[student.replace('_', ' ').rstrip() + ' _'] = student_stats
 
 report(result, parent_dir)
