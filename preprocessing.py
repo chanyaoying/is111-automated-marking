@@ -80,7 +80,7 @@ def change_question_name(student_solution_dir, question_names):
     for file in student_solutions:
         for question_name in question_names:
             # [1:] to get rid of 'functions', which is the first key of the testcases dict
-            search_key = f"{'.'.join(question_name[1:].split('_'))}"
+            search_key = f"{'.'.join(question_name.split('_'))}"
             if file.find(search_key) != -1:
                 src = os.path.join(student_solution_dir, file)
                 dest = os.path.join(student_solution_dir,

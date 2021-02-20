@@ -33,7 +33,7 @@ if lab_number < 14:
 
     testcases = parse_testcase(parent_dir)
 
-    question_names = list(testcases.keys())
+    question_names = list(testcases.keys())[1:]
 
     rename(dirs, parent_dir, question_names)
 
@@ -82,6 +82,9 @@ if lab_number < 14:
                 logging.warn(e)
 
             student_stats[question] = stats
+
+        # find out which question is not attempted
+        list(testcases.keys())[1:]
 
         result[student.replace('_', ' ').rstrip() + ' _'] = student_stats
 
