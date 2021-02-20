@@ -1,6 +1,7 @@
-import os, sys, shutil, json
+import os
 from preprocessing import *
 from utility import *
+from report import report
 
 ##############################################
 # SETTINGS
@@ -26,51 +27,66 @@ if __name__ == "__main__":
                 '_'), os.listdir(parent_dir)))
 
         testcases = parse_testcase(parent_dir)
-        print(json.dumps(testcases, indent=4))
-        exit()
 
         question_names = list(testcases.keys())
 
         rename(dirs, parent_dir, question_names)
 
+        result = {}
+
         for student in dirs:
             student_path = os.path.join(parent_dir, student)
 
-            solution_files = os.listdir(student_path)
+            solution_files = list(filter(lambda file: file.startswith('q') and file.endswith('.py')  ,os.listdir(student_path)))
 
-            stats = {'q': None, 'errors': [], 'prints': 0}
+            student_stats = {}            
 
             for solution_file in solution_files: # for each question
+
+                if solution_file == "__pycache__":
+                    continue
+
                 solution_file_path = os.path.join(student_path, solution_file)
                 question = solution_file.rstrip('.py')
 
-                # count and remove print statements
-                prints = 0
+                # store information about the question
+                stats = {'errors': [], 'prints': 0, 'inputs': 0}
+
+                # count and remove print and input statements
                 code = ''
                 with open(solution_file_path, 'r') as file:
                     for line in file.readlines():
                         if line.find("print") != -1:
-                            prints += 1
+                            stats['prints'] += 1
+                        elif line.find("input") != -1:
+                            stats['inputs'] += 1
                         else:
                             code += line
 
-                stats['prints'] = prints
-
                 code = ''.join(code)
+
+                # replace code with code without print and input statements
+                with open(solution_file_path, "w") as file:
+                    file.write(code)
 
                 # load test cases for the question
                 question_testcases = testcases[question]
 
                 # import student's function in question
-                import_statement = f"from labs.{lab_number}.{student}.{question} import {testcases['functions'][question]} as foo"
+                import_statement = f"from labs.{lab_number}.{student}.{question} import {testcases['functions'][question]}"
 
                 # execute import statement
                 try:
-                    exec(import_statement)
-                    mark_question(foo, question_testcases)
+                    # unpack into stats
+                    score, error, percentage = mark_question(import_statement, question_testcases)
+                    stats['score'] = score
+                    stats['percentage'] = percentage
+                    stats['errors'].extend(error)
                 except Exception as e:
-                    print(e)
+                    print("Error: ", e)
 
-                # print(solution_file)
-                print(stats)
-                exit()
+                student_stats[question] = stats
+
+            result[student] = student_stats
+    
+    report(result, parent_dir)

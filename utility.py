@@ -61,15 +61,34 @@ def parse_testcase(parent_dir):
     return testcases
 
 
-def mark_question(function, testcases):
+def mark_question(import_statement, testcases):
     """
     mark one question and output the stats
     if error, note it as an error instead of 0
     """
-    score = []
+    error = []
+    score = 0
+    percentage = 0
 
-    for testcase in testcases:
-        score.append(function(testcase))
+    try:
+        exec(import_statement)
+    except Exception as e:
+        error = "Error detected: Unable to import question function. The function name is probably wrong."
+        print(error)
+        print(e)
+        error =[error, str(e)]
+        return score, error, percentage
 
-    return sum(int(n) for n in score)
+    for i in range(len(testcases)):
+        testcase = testcases[i]
+        try: 
+            scoring_code = f"global correct; correct = int({testcase})"
+            exec(scoring_code)
+            score += correct
+        except Exception as e:
+            error = [f"Unable to mark test case no.{i+1}"]
+
+    percentage = score / len(testcases)
+
+    return score, error, percentage
     
