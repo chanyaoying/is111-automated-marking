@@ -83,7 +83,7 @@ def mark_question(import_statement, testcases):
     except Exception as e:
         error = "Error detected: Unable to import question function. The function name is probably wrong."
         logging.warn(error)
-        loggin.warn(e)
+        logging.warn(e)
         error =[error, str(e)]
         return score, error, percentage
 

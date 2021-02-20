@@ -1,1 +1,318 @@
-{}
+{
+    "ANDREW_CAI_ZECHEN__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 1.0
+        }
+    },
+    "ARYAMAN_HARISH_BELGAUMKAR__": {
+        "q2_1": {
+            "errors": [
+                "Error detected: Unable to import question function. The function name is probably wrong.",
+                "expected an indented block (q2_1.py, line 4)"
+            ],
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0
+        },
+        "q2_2": {
+            "errors": [
+                "Error detected: Unable to import question function. The function name is probably wrong.",
+                "cannot import name 'calculate_rows_of_lights' from 'labs.lab4.ARYAMAN_HARISH_BELGAUMKAR__.q2_2' (c:\\Users\\yaoyi\\Documents\\GitHub\\is111-automated-marking\\labs\\lab4\\ARYAMAN_HARISH_BELGAUMKAR__\\q2_2.py)"
+            ],
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0
+        },
+        "q3_1": {
+            "errors": [
+                "Error detected: Unable to import question function. The function name is probably wrong.",
+                "invalid syntax (q3_1.py, line 14)"
+            ],
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0
+        }
+    },
+    "ASTON_KOH_ZHEN_YANG__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 1.0
+        }
+    },
+    "BRYAN_MATTHEW_ANTONIUS__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 1.0
+        }
+    },
+    "CHEN_HSUAN_JU__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 0.6666666666666666
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        }
+    },
+    "CHUA_YI_DA__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 1.0
+        }
+    },
+    "DYLAN_DAVIDSON_WANG_YI_RONG__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        }
+    },
+    "EMILY_YEO_JIA_HUI__": {
+        "q2_1": {
+            "errors": [
+                "Error detected: Unable to import question function. The function name is probably wrong.",
+                "name 'level' is not defined"
+            ],
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0
+        },
+        "q3_1": {
+            "errors": [
+                "Error detected: Unable to import question function. The function name is probably wrong.",
+                "name 'y' is not defined"
+            ],
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0
+        }
+    },
+    "EUGENE_WONG_WEI_HUAN__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 1.0
+        }
+    },
+    "GAN_YI_HUI__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 1.0
+        }
+    },
+    "HENG_SI_KAI__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 1.0
+        }
+    },
+    "JESSICA_ANTONIA__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0.0
+        }
+    },
+    "KEVIN_CHIN_KAI_WEN__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 1.0
+        }
+    },
+    "KOO_JING_YONG__": {
+        "q2_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 0.6666666666666666
+        },
+        "q2_2": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 3,
+            "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [],
+            "prints": 0,
+            "inputs": 0,
+            "score": 2,
+            "percentage": 1.0
+        }
+    }
+}

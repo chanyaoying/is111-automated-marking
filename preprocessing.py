@@ -28,17 +28,16 @@ def change_question_name(student_solution_dir, question_names):
     return unable
 
 
-def split_py_files_by_name(lab_number):
+def split_py_files_by_name(path):
     """
     The python files have to have names
     """
-    
-    parent_dir = os.path.join('./labs', lab_number)
 
-    py_files = list(filter(lambda file: file.endswith('.py') and file != 'testcase.py',os.listdir(parent_dir)))
+    py_files = list(filter(lambda file: file.endswith('.py') and file != 'testcase.py',os.listdir(path)))
     
-    if len(py_files) == 1:
+    if len(py_files) <= 1:
         logging.warn("There are no files. You need to extract the zip file.")
+        logging.info("Exiting...")
         print("Exiting...")
         exit()
     
@@ -54,7 +53,7 @@ def split_py_files_by_name(lab_number):
 
     for name in names:
 
-        new_path = os.path.join(parent_dir, name.replace(' ', '_'))
+        new_path = os.path.join(path, name.replace(' ', '_'))
         try:
             os.mkdir(new_path)
             logging.info(f'New directory created at: {new_path}')
@@ -64,7 +63,7 @@ def split_py_files_by_name(lab_number):
         
         for py_file in py_files:
             if py_file.find(name) != -1:
-                src = os.path.join(parent_dir, py_file)
+                src = os.path.join(path, py_file)
                 move_loc = shutil.move(src, new_path)
                 logging.info(f'{py_file} was moved to {move_loc}')
 
