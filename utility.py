@@ -44,35 +44,32 @@ def parse_testcase(parent_dir):
         print(e)
         print(f'Please create a testcase.py file in {parent_dir}')
     
-    testcases = {"functions": []}
+    testcases = {"functions": dict()}
 
     for line in lines:
         if '#' in line:
             question_number = line[2:]
+            question_number = f"q{'_'.join(question_number.split('.'))}"
             testcases[question_number] = []
         elif line:
             question_number = list(testcases.keys())[-1]
-            testcases[question_number].append(line)
+            testcases[question_number].append(line[6:-1])
             function = line.split('(')[1]
             if function not in testcases['functions']:
-                testcases['functions'].append(function)
+                testcases['functions'][question_number] = function
 
     return testcases
 
 
-def mark_question(q):
+def mark_question(function, testcases):
     """
-    q:
-    <class 'str'>
-    The question number.
+    mark one question and output the stats
+    if error, note it as an error instead of 0
     """
-    try:
-        marks = 0
+    score = []
 
-        
+    for testcase in testcases:
+        score.append(function(testcase))
 
-    except:
-        print(f"Failed to mark {q}.")
-        # push 0 marks
-    finally:
-        print(f"Marked {q}. Marks: {marks}")
+    return sum(int(n) for n in score)
+    

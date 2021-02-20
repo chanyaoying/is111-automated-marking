@@ -13,10 +13,14 @@ def change_question_name(student_solution_dir, question_names):
     
     for file in student_solutions:
         for question_name in question_names:
-            if file.find(question_name) != -1:
+            search_key = f"{'.'.join(question_name[1:].split('_'))}" # [1:] to get rid of 'functions', which is the first key of the testcases dict
+            if file.find(search_key) != -1:
                 src = os.path.join(student_solution_dir, file)
                 dest = os.path.join(student_solution_dir, question_name + '.py')
                 os.rename(src, dest)
+                unable.remove(file)
+                break
+            elif file.find(question_name) != -1:
                 unable.remove(file)
                 break
 
@@ -53,7 +57,7 @@ def split_py_files_by_name(lab_number):
 
     for name in names:
 
-        new_path = os.path.join(parent_dir, name)
+        new_path = os.path.join(parent_dir, name.replace(' ', '_'))
         try:
             os.mkdir(new_path)
             print(f'New directory created at: {new_path}')

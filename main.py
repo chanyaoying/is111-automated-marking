@@ -26,8 +26,8 @@ if __name__ == "__main__":
                 '_'), os.listdir(parent_dir)))
 
         testcases = parse_testcase(parent_dir)
-        # print(json.dumps(testcases, indent=4))
-        # exit()
+        print(json.dumps(testcases, indent=4))
+        exit()
 
         question_names = list(testcases.keys())
 
@@ -38,8 +38,11 @@ if __name__ == "__main__":
 
             solution_files = os.listdir(student_path)
 
-            for solution_file in solution_files:
+            stats = {'q': None, 'errors': [], 'prints': 0}
+
+            for solution_file in solution_files: # for each question
                 solution_file_path = os.path.join(student_path, solution_file)
+                question = solution_file.rstrip('.py')
 
                 # count and remove print statements
                 prints = 0
@@ -51,8 +54,23 @@ if __name__ == "__main__":
                         else:
                             code += line
 
+                stats['prints'] = prints
+
                 code = ''.join(code)
 
-                print(solution_file)
-                print(prints)
+                # load test cases for the question
+                question_testcases = testcases[question]
+
+                # import student's function in question
+                import_statement = f"from labs.{lab_number}.{student}.{question} import {testcases['functions'][question]} as foo"
+
+                # execute import statement
+                try:
+                    exec(import_statement)
+                    mark_question(foo, question_testcases)
+                except Exception as e:
+                    print(e)
+
+                # print(solution_file)
+                print(stats)
                 exit()
