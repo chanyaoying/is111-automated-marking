@@ -1,30 +1,9 @@
-import os, sys, shutil, json, logging
+import os
+import sys
+import shutil
+import json
+import logging
 from preprocessing import *
-
-
-def rename(dirs, parent_dir, question_names):
-    need_rename = {}
-
-    for student in dirs:
-        student_path = os.path.join(parent_dir, student)
-        # change question name
-        unable = change_question_name(student_path, question_names)
-        if unable:
-            need_rename[student] = unable
-
-    if need_rename:
-        logging.info(json.dumps(need_rename, indent=4))
-        logging.info("Displayed files to be renamed.")
-        
-        print("These files need to be renames to their question number: ")
-        print(json.dumps(need_rename, indent=4))
-
-        answer = confirmation(
-            'Continue marking without renaming the above files? (y/n): ')
-        if not answer:
-            logging.info('User cancelled the process. Exiting...')
-            print("Exiting...")
-            exit()
 
 
 def confirmation(question):
@@ -51,7 +30,7 @@ def parse_testcase(parent_dir):
         logging.error("Error with the parsing of test case.")
         logging.error(e)
         logging.error(f'Please create a testcase.py file in {parent_dir}')
-    
+
     testcases = {"functions": dict()}
 
     for line in lines:
@@ -84,12 +63,12 @@ def mark_question(import_statement, testcases):
         error = "Error detected: Unable to import question function. The function name is probably wrong."
         logging.warn(error)
         logging.warn(e)
-        error =[error, str(e)]
+        error = [error, str(e)]
         return score, error, percentage
 
     for i in range(len(testcases)):
         testcase = testcases[i]
-        try: 
+        try:
             scoring_code = f"global correct; correct = int({testcase})"
             exec(scoring_code)
             score += correct
@@ -99,4 +78,3 @@ def mark_question(import_statement, testcases):
     percentage = score / len(testcases)
 
     return score, error, percentage
-    

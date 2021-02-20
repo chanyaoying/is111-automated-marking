@@ -11,3 +11,4 @@ def pass_ippt(pushup_score,situp_score,run_score):
         passing = True
     return passing
 
+pass

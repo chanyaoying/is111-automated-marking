@@ -1,5 +1,7 @@
 import pandas as pd
-import os, json, logging
+import os
+import json
+import logging
 
 
 def report(json_data, parent_dir):

@@ -6,5 +6,6 @@ def encode_caesar(plaintext, shift):
     table = str.maketrans(alphabet, shifted_alphabet)
     return plaintext.translate(table)
 
+pass
 
 #I don't understand why my code doesn't change the first letter

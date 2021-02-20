@@ -8,3 +8,6 @@ def pass_ippt(pushup_score,situp_score,run_score):
     else:
         return True
 
+pass
+pass
+pass

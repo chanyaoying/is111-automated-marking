@@ -12,3 +12,4 @@ def calculate_rows_of_lights(budget,cost_per_light):
         row.pop()
         return row[-1] #return last element from the list
 
+pass

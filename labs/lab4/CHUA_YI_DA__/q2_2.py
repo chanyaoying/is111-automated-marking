@@ -13,3 +13,6 @@ def calculate_rows_of_lights(budget,cost_per_light):
     return num_of_rows
 
 #test cases
+pass
+pass
+pass

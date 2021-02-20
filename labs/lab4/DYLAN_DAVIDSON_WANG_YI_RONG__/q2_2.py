@@ -11,3 +11,6 @@ def  calculate_rows_of_lights(x,y):
     else:
         return 0
 
+pass
+pass
+pass

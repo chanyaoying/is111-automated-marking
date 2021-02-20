@@ -11,3 +11,6 @@ def calculate_rows_of_lights (budget, cost_per_light):
                 rows += 1
     return rows
 
+pass
+pass
+pass

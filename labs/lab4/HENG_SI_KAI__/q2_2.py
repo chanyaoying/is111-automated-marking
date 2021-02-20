@@ -8,7 +8,16 @@ def calculate_rows_of_lights(budget, cost_per_light):
         rows_of_lights += 1
     return rows_of_lights
 
+pass
+pass
+pass
 
+# enable the following lines of code to pass
 
+pass
+pass
 
+pass
+pass
+#     pass
 #     rows -= 1

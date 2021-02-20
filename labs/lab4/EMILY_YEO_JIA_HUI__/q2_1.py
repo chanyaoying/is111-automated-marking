@@ -1,3 +1,6 @@
+pass
+pass
+pass
 
 if level == 'Member' or level == 'Silver':
     if payment == 'GrabPay':
@@ -15,3 +18,4 @@ if level == 'Platinum':
     else: 
         points = fare * 2
 import math     
+pass

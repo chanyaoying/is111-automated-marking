@@ -1,4 +1,5 @@
-import os, logging
+import os
+import logging
 from preprocessing import *
 from utility import *
 from report import report
@@ -17,9 +18,10 @@ if lab_number < 14:
 
     lab_number = 'lab' + str(lab_number)
     parent_dir = os.path.join('./labs', lab_number)
-    
+
     logging_path = os.path.join(parent_dir, 'logs.log')
-    logging.basicConfig(level=logging.DEBUG ,filename=logging_path, filemode='a', format='%(asctime)s-%(levelname)s-%(message)s')
+    logging.basicConfig(level=logging.DEBUG, filename=logging_path,
+                        filemode='a', format='%(asctime)s-%(levelname)s-%(message)s')
     logging.info('Process Start.')
 
     dirs = list(filter(lambda file: file.endswith(
@@ -40,15 +42,16 @@ if lab_number < 14:
     for student in dirs:
         student_path = os.path.join(parent_dir, student)
 
-        solution_files = list(filter(lambda file: file.startswith('q') and file.endswith('.py'), os.listdir(student_path)))
+        solution_files = list(filter(lambda file: file.startswith(
+            'q') and file.endswith('.py'), os.listdir(student_path)))
 
-        student_stats = {}            
+        student_stats = {}
 
-        for solution_file in solution_files: # for each question
-            
+        for solution_file in solution_files:  # for each question
+
             logging.info(f"Marking {solution_file} for {student} now.")
 
-            if solution_file == "__pycache__":
+            if solution_file == "__pycache__" or solution_file.find('-original') != -1:
                 continue
 
             solution_file_path = os.path.join(student_path, solution_file)
@@ -57,33 +60,20 @@ if lab_number < 14:
             # store information about the question
             stats = {'errors': [], 'prints': 0, 'inputs': 0}
 
-            # count and remove print and input statements
-            code = ''
-            with open(solution_file_path, 'r') as file:
-                for line in file.readlines():
-                    if line.find("print") != -1:
-                        stats['prints'] += 1
-                    elif line.find("input") != -1:
-                        stats['inputs'] += 1
-                    else:
-                        code += line
-
-            code = ''.join(code)
-
-            # replace code with code without print and input statements
-            with open(solution_file_path, "w") as file:
-                file.write(code)
+            # store number of prints and inputs in the question. Original copies are created if there are any.
+            stats['prints'], stats['inputs'] = handle_prints_and_inputs(
+                solution_file_path)
 
             # load test cases for the question
             question_testcases = testcases[question]
 
-            # import student's function in question
+            # import student's function in question (prevents code injection by students)
             import_statement = f"from labs.{lab_number}.{student}.{question} import {testcases['functions'][question]}"
 
-            # execute import statement
             try:
-                # unpack into stats
-                score, error, percentage = mark_question(import_statement, question_testcases)
+                # execute import statement and mark questions
+                score, error, percentage = mark_question(
+                    import_statement, question_testcases)
                 stats['score'] = score
                 stats['percentage'] = percentage
                 stats['errors'].extend(error)
@@ -97,4 +87,5 @@ if lab_number < 14:
 
 report(result, parent_dir)
 logging.info('Process ends.')
-logging.info('========================================================================')
+logging.info(
+    '========================================================================')

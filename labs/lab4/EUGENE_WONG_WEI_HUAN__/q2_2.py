@@ -6,3 +6,6 @@ def calculate_rows_of_lights(budget, cost_per_light):
         if used_lights>no_of_lights:
             return i-1
             break
+pass
+pass
+pass
