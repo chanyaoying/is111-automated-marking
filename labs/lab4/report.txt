@@ -2,21 +2,21 @@
     "ANDREW CAI ZECHEN _": {
         "q2_1": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q2_2": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q3_1": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 2,
             "percentage": 1.0
@@ -25,7 +25,7 @@
     "ARYAMAN HARISH BELGAUMKAR _": {
         "q2_1": {
             "errors": [],
-            "prints": 1,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
@@ -54,21 +54,21 @@
     "ASTON KOH ZHEN YANG _": {
         "q2_1": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q2_2": {
             "errors": [],
-            "prints": 1,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q3_1": {
             "errors": [],
-            "prints": 2,
+            "prints": 0,
             "inputs": 0,
             "score": 2,
             "percentage": 1.0
@@ -77,21 +77,21 @@
     "BRYAN MATTHEW ANTONIUS _": {
         "q2_1": {
             "errors": [],
-            "prints": 4,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q2_2": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q3_1": {
             "errors": [],
-            "prints": 2,
+            "prints": 0,
             "inputs": 0,
             "score": 2,
             "percentage": 1.0
@@ -100,37 +100,46 @@
     "CHEN HSUAN JU _": {
         "q2_1": {
             "errors": [],
-            "prints": 1,
+            "prints": 0,
             "inputs": 0,
             "score": 2,
             "percentage": 0.6666666666666666
         },
         "q2_2": {
             "errors": [],
-            "prints": 1,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [
+                "Question not attempted"
+            ],
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0
         }
     },
     "CHUA YI DA _": {
         "q2_1": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q2_2": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q3_1": {
             "errors": [],
-            "prints": 2,
+            "prints": 0,
             "inputs": 0,
             "score": 2,
             "percentage": 1.0
@@ -139,17 +148,26 @@
     "DYLAN DAVIDSON WANG YI RONG _": {
         "q2_1": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q2_2": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
+        },
+        "q3_1": {
+            "errors": [
+                "Question not attempted"
+            ],
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0
         }
     },
     "EMILY YEO JIA HUI _": {
@@ -158,8 +176,8 @@
                 "Error detected: Unable to import question function. The function name is probably wrong.",
                 "name 'level' is not defined"
             ],
-            "prints": 1,
-            "inputs": 3,
+            "prints": 0,
+            "inputs": 0,
             "score": 0,
             "percentage": 0
         },
@@ -168,8 +186,17 @@
                 "Error detected: Unable to import question function. The function name is probably wrong.",
                 "name 'y' is not defined"
             ],
-            "prints": 1,
-            "inputs": 1,
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0
+        },
+        "q2_2": {
+            "errors": [
+                "Question not attempted"
+            ],
+            "prints": 0,
+            "inputs": 0,
             "score": 0,
             "percentage": 0
         }
@@ -177,21 +204,21 @@
     "EUGENE WONG WEI HUAN _": {
         "q2_1": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q2_2": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q3_1": {
             "errors": [],
-            "prints": 2,
+            "prints": 0,
             "inputs": 0,
             "score": 2,
             "percentage": 1.0
@@ -200,14 +227,14 @@
     "GAN YI HUI _": {
         "q2_1": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q2_2": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
@@ -223,21 +250,21 @@
     "HENG SI KAI _": {
         "q2_1": {
             "errors": [],
-            "prints": 1,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q2_2": {
             "errors": [],
-            "prints": 5,
-            "inputs": 4,
+            "prints": 0,
+            "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q3_1": {
             "errors": [],
-            "prints": 1,
+            "prints": 0,
             "inputs": 0,
             "score": 2,
             "percentage": 1.0
@@ -246,21 +273,21 @@
     "JESSICA ANTONIA _": {
         "q2_1": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q2_2": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q3_1": {
             "errors": [],
-            "prints": 1,
+            "prints": 0,
             "inputs": 0,
             "score": 0,
             "percentage": 0.0
@@ -269,7 +296,7 @@
     "KEVIN CHIN KAI WEN _": {
         "q2_1": {
             "errors": [],
-            "prints": 3,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
@@ -292,21 +319,21 @@
     "KOO JING YONG _": {
         "q2_1": {
             "errors": [],
-            "prints": 1,
+            "prints": 0,
             "inputs": 0,
             "score": 2,
             "percentage": 0.6666666666666666
         },
         "q2_2": {
             "errors": [],
-            "prints": 2,
+            "prints": 0,
             "inputs": 0,
             "score": 3,
             "percentage": 1.0
         },
         "q3_1": {
             "errors": [],
-            "prints": 2,
+            "prints": 0,
             "inputs": 0,
             "score": 2,
             "percentage": 1.0

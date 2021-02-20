@@ -46,6 +46,7 @@ if lab_number < 14:
             'q') and file.endswith('.py'), os.listdir(student_path)))
 
         student_stats = {}
+        attempted = question_names.copy()
 
         for solution_file in solution_files:  # for each question
 
@@ -56,6 +57,10 @@ if lab_number < 14:
 
             solution_file_path = os.path.join(student_path, solution_file)
             question = solution_file.rstrip('.py')
+
+            # the student attempted this
+            if question in attempted:
+                attempted.remove(question)
 
             # store information about the question
             stats = {'errors': [], 'prints': 0, 'inputs': 0}
@@ -83,9 +88,14 @@ if lab_number < 14:
 
             student_stats[question] = stats
 
-        # find out which question is not attempted
-        list(testcases.keys())[1:]
-
+        for unattempted in attempted:
+            student_stats[unattempted] = {
+            "errors": ['Question not attempted'],
+            "prints": 0,
+            "inputs": 0,
+            "score": 0,
+            "percentage": 0
+        }
         result[student.replace('_', ' ').rstrip() + ' _'] = student_stats
 
 report(result, parent_dir)

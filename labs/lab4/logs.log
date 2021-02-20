@@ -235,3 +235,144 @@
 2021-02-20 18:35:39,302-INFO-Report created at ./labs\lab4
 2021-02-20 18:35:39,302-INFO-Process ends.
 2021-02-20 18:35:39,302-INFO-========================================================================
+2021-02-20 19:20:23,409-INFO-Process Start.
+2021-02-20 19:20:23,410-INFO-{
+    "ANDREW_CAI_ZECHEN__": [
+        "__pycache__"
+    ],
+    "ARYAMAN_HARISH_BELGAUMKAR__": [
+        "__pycache__"
+    ],
+    "ASTON_KOH_ZHEN_YANG__": [
+        "__pycache__"
+    ],
+    "BRYAN_MATTHEW_ANTONIUS__": [
+        "__pycache__"
+    ],
+    "CHEN_HSUAN_JU__": [
+        "45355-55331 - CHEN HSUAN JU _ - Feb 7, 2021 744 PM - lab 4_Q1.1.py",
+        "45355-55331 - CHEN HSUAN JU _ - Feb 7, 2021 744 PM - lab 4_Q1.2.py",
+        "45355-55331 - CHEN HSUAN JU _ - Feb 7, 2021 744 PM - lab 4_Q1.3.py",
+        "__pycache__"
+    ],
+    "CHUA_YI_DA__": [
+        "__pycache__"
+    ],
+    "DYLAN_DAVIDSON_WANG_YI_RONG__": [
+        "39696-55331 - DYLAN DAVIDSON WANG YI RONG _ - Feb 9, 2021 1134 AM - email.py",
+        "39696-55331 - DYLAN DAVIDSON WANG YI RONG _ - Feb 9, 2021 1134 AM - hur.py",
+        "39696-55331 - DYLAN DAVIDSON WANG YI RONG _ - Feb 9, 2021 1134 AM - quad.py",
+        "__pycache__"
+    ],
+    "EMILY_YEO_JIA_HUI__": [
+        "38969-55331 - EMILY YEO JIA HUI _ - Feb 10, 2021 1200 AM - Q3.2.py",
+        "__pycache__"
+    ],
+    "EUGENE_WONG_WEI_HUAN__": [
+        "__pycache__"
+    ],
+    "GAN_YI_HUI__": [
+        "38362-55331 - GAN YI HUI _ - Feb 16, 2021 1112 PM - IS111 Lab Exercise 04 - G1 - Q1.1 - Gan Yi Hui.py",
+        "38362-55331 - GAN YI HUI _ - Feb 16, 2021 1112 PM - IS111 Lab Exercise 04 - G1 - Q1.2 - Gan Yi Hui.py",
+        "__pycache__"
+    ],
+    "HENG_SI_KAI__": [
+        "__pycache__"
+    ],
+    "JESSICA_ANTONIA__": [
+        "__pycache__"
+    ],
+    "KEVIN_CHIN_KAI_WEN__": [
+        "__pycache__"
+    ],
+    "KOO_JING_YONG__": [
+        "39936-55331 - KOO JING YONG _ - Feb 8, 2021 927 PM - Lab4qn1.py",
+        "__pycache__"
+    ]
+}
+2021-02-20 19:20:23,410-INFO-Displayed files to be renamed.
+2021-02-20 19:20:24,867-INFO-User entered 'y'
+2021-02-20 19:20:24,867-INFO-Marking q2_1-original.py for ANDREW_CAI_ZECHEN__ now.
+2021-02-20 19:20:24,867-INFO-Marking q2_1.py for ANDREW_CAI_ZECHEN__ now.
+2021-02-20 19:20:24,869-INFO-Marking q2_2-original.py for ANDREW_CAI_ZECHEN__ now.
+2021-02-20 19:20:24,869-INFO-Marking q2_2.py for ANDREW_CAI_ZECHEN__ now.
+2021-02-20 19:20:24,870-INFO-Marking q3_1-original.py for ANDREW_CAI_ZECHEN__ now.
+2021-02-20 19:20:24,870-INFO-Marking q3_1.py for ANDREW_CAI_ZECHEN__ now.
+2021-02-20 19:20:24,871-INFO-Marking q2_1-original.py for ARYAMAN_HARISH_BELGAUMKAR__ now.
+2021-02-20 19:20:24,871-INFO-Marking q2_1.py for ARYAMAN_HARISH_BELGAUMKAR__ now.
+2021-02-20 19:20:24,872-INFO-Marking q2_2.py for ARYAMAN_HARISH_BELGAUMKAR__ now.
+2021-02-20 19:20:24,873-WARNING-Error detected: Unable to import question function. The function name is probably wrong.
+2021-02-20 19:20:24,873-WARNING-cannot import name 'calculate_rows_of_lights' from 'labs.lab4.ARYAMAN_HARISH_BELGAUMKAR__.q2_2' (c:\Users\yaoyi\Documents\GitHub\is111-automated-marking\labs\lab4\ARYAMAN_HARISH_BELGAUMKAR__\q2_2.py)
+2021-02-20 19:20:24,873-INFO-Marking q3_1.py for ARYAMAN_HARISH_BELGAUMKAR__ now.
+2021-02-20 19:20:24,874-WARNING-Error detected: Unable to import question function. The function name is probably wrong.
+2021-02-20 19:20:24,874-WARNING-invalid syntax (q3_1.py, line 14)
+2021-02-20 19:20:24,874-INFO-Marking q2_1-original.py for ASTON_KOH_ZHEN_YANG__ now.
+2021-02-20 19:20:24,874-INFO-Marking q2_1.py for ASTON_KOH_ZHEN_YANG__ now.
+2021-02-20 19:20:24,875-INFO-Marking q2_2-original.py for ASTON_KOH_ZHEN_YANG__ now.
+2021-02-20 19:20:24,876-INFO-Marking q2_2.py for ASTON_KOH_ZHEN_YANG__ now.
+2021-02-20 19:20:24,876-INFO-Marking q3_1-original.py for ASTON_KOH_ZHEN_YANG__ now.
+2021-02-20 19:20:24,876-INFO-Marking q3_1.py for ASTON_KOH_ZHEN_YANG__ now.
+2021-02-20 19:20:24,877-INFO-Marking q2_1-original.py for BRYAN_MATTHEW_ANTONIUS__ now.
+2021-02-20 19:20:24,877-INFO-Marking q2_1.py for BRYAN_MATTHEW_ANTONIUS__ now.
+2021-02-20 19:20:24,878-INFO-Marking q2_2-original.py for BRYAN_MATTHEW_ANTONIUS__ now.
+2021-02-20 19:20:24,878-INFO-Marking q2_2.py for BRYAN_MATTHEW_ANTONIUS__ now.
+2021-02-20 19:20:24,879-INFO-Marking q3_1-original.py for BRYAN_MATTHEW_ANTONIUS__ now.
+2021-02-20 19:20:24,879-INFO-Marking q3_1.py for BRYAN_MATTHEW_ANTONIUS__ now.
+2021-02-20 19:20:24,880-INFO-Marking q2_1-original.py for CHEN_HSUAN_JU__ now.
+2021-02-20 19:20:24,880-INFO-Marking q2_1.py for CHEN_HSUAN_JU__ now.
+2021-02-20 19:20:24,881-INFO-Marking q2_2-original.py for CHEN_HSUAN_JU__ now.
+2021-02-20 19:20:24,881-INFO-Marking q2_2.py for CHEN_HSUAN_JU__ now.
+2021-02-20 19:20:24,881-INFO-Marking q2_1-original.py for CHUA_YI_DA__ now.
+2021-02-20 19:20:24,882-INFO-Marking q2_1.py for CHUA_YI_DA__ now.
+2021-02-20 19:20:24,883-INFO-Marking q2_2-original.py for CHUA_YI_DA__ now.
+2021-02-20 19:20:24,883-INFO-Marking q2_2.py for CHUA_YI_DA__ now.
+2021-02-20 19:20:24,883-INFO-Marking q3_1-original.py for CHUA_YI_DA__ now.
+2021-02-20 19:20:24,883-INFO-Marking q3_1.py for CHUA_YI_DA__ now.
+2021-02-20 19:20:24,884-INFO-Marking q2_1-original.py for DYLAN_DAVIDSON_WANG_YI_RONG__ now.
+2021-02-20 19:20:24,884-INFO-Marking q2_1.py for DYLAN_DAVIDSON_WANG_YI_RONG__ now.
+2021-02-20 19:20:24,885-INFO-Marking q2_2-original.py for DYLAN_DAVIDSON_WANG_YI_RONG__ now.
+2021-02-20 19:20:24,885-INFO-Marking q2_2.py for DYLAN_DAVIDSON_WANG_YI_RONG__ now.
+2021-02-20 19:20:24,886-INFO-Marking q2_1-original.py for EMILY_YEO_JIA_HUI__ now.
+2021-02-20 19:20:24,886-INFO-Marking q2_1.py for EMILY_YEO_JIA_HUI__ now.
+2021-02-20 19:20:24,887-WARNING-Error detected: Unable to import question function. The function name is probably wrong.
+2021-02-20 19:20:24,887-WARNING-name 'level' is not defined
+2021-02-20 19:20:24,887-INFO-Marking q3_1-original.py for EMILY_YEO_JIA_HUI__ now.
+2021-02-20 19:20:24,887-INFO-Marking q3_1.py for EMILY_YEO_JIA_HUI__ now.
+2021-02-20 19:20:24,888-WARNING-Error detected: Unable to import question function. The function name is probably wrong.
+2021-02-20 19:20:24,888-WARNING-name 'y' is not defined
+2021-02-20 19:20:24,888-INFO-Marking q2_1-original.py for EUGENE_WONG_WEI_HUAN__ now.
+2021-02-20 19:20:24,888-INFO-Marking q2_1.py for EUGENE_WONG_WEI_HUAN__ now.
+2021-02-20 19:20:24,890-INFO-Marking q2_2-original.py for EUGENE_WONG_WEI_HUAN__ now.
+2021-02-20 19:20:24,890-INFO-Marking q2_2.py for EUGENE_WONG_WEI_HUAN__ now.
+2021-02-20 19:20:24,890-INFO-Marking q3_1-original.py for EUGENE_WONG_WEI_HUAN__ now.
+2021-02-20 19:20:24,891-INFO-Marking q3_1.py for EUGENE_WONG_WEI_HUAN__ now.
+2021-02-20 19:20:24,891-INFO-Marking q2_1-original.py for GAN_YI_HUI__ now.
+2021-02-20 19:20:24,891-INFO-Marking q2_1.py for GAN_YI_HUI__ now.
+2021-02-20 19:20:24,892-INFO-Marking q2_2-original.py for GAN_YI_HUI__ now.
+2021-02-20 19:20:24,892-INFO-Marking q2_2.py for GAN_YI_HUI__ now.
+2021-02-20 19:20:24,893-INFO-Marking q3_1.py for GAN_YI_HUI__ now.
+2021-02-20 19:20:24,894-INFO-Marking q2_1-original.py for HENG_SI_KAI__ now.
+2021-02-20 19:20:24,894-INFO-Marking q2_1.py for HENG_SI_KAI__ now.
+2021-02-20 19:20:24,895-INFO-Marking q2_2-original.py for HENG_SI_KAI__ now.
+2021-02-20 19:20:24,895-INFO-Marking q2_2.py for HENG_SI_KAI__ now.
+2021-02-20 19:20:24,895-INFO-Marking q3_1-original.py for HENG_SI_KAI__ now.
+2021-02-20 19:20:24,896-INFO-Marking q3_1.py for HENG_SI_KAI__ now.
+2021-02-20 19:20:24,896-INFO-Marking q2_1-original.py for JESSICA_ANTONIA__ now.
+2021-02-20 19:20:24,896-INFO-Marking q2_1.py for JESSICA_ANTONIA__ now.
+2021-02-20 19:20:24,897-INFO-Marking q2_2-original.py for JESSICA_ANTONIA__ now.
+2021-02-20 19:20:24,897-INFO-Marking q2_2.py for JESSICA_ANTONIA__ now.
+2021-02-20 19:20:24,898-INFO-Marking q3_1-original.py for JESSICA_ANTONIA__ now.
+2021-02-20 19:20:24,898-INFO-Marking q3_1.py for JESSICA_ANTONIA__ now.
+2021-02-20 19:20:24,899-INFO-Marking q2_1-original.py for KEVIN_CHIN_KAI_WEN__ now.
+2021-02-20 19:20:24,899-INFO-Marking q2_1.py for KEVIN_CHIN_KAI_WEN__ now.
+2021-02-20 19:20:24,900-INFO-Marking q2_2.py for KEVIN_CHIN_KAI_WEN__ now.
+2021-02-20 19:20:24,900-INFO-Marking q3_1.py for KEVIN_CHIN_KAI_WEN__ now.
+2021-02-20 19:20:24,901-INFO-Marking q2_1-original.py for KOO_JING_YONG__ now.
+2021-02-20 19:20:24,901-INFO-Marking q2_1.py for KOO_JING_YONG__ now.
+2021-02-20 19:20:24,902-INFO-Marking q2_2-original.py for KOO_JING_YONG__ now.
+2021-02-20 19:20:24,902-INFO-Marking q2_2.py for KOO_JING_YONG__ now.
+2021-02-20 19:20:24,903-INFO-Marking q3_1-original.py for KOO_JING_YONG__ now.
+2021-02-20 19:20:24,903-INFO-Marking q3_1.py for KOO_JING_YONG__ now.
+2021-02-20 19:20:24,954-INFO-Report created at ./labs\lab4
+2021-02-20 19:20:24,954-INFO-Process ends.
+2021-02-20 19:20:24,954-INFO-========================================================================
