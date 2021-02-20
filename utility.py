@@ -1,4 +1,4 @@
-import os, sys, shutil, json
+import os, sys, shutil, json, logging
 from preprocessing import *
 
 
@@ -13,11 +13,16 @@ def rename(dirs, parent_dir, question_names):
             need_rename[student] = unable
 
     if need_rename:
+        logging.info(json.dumps(need_rename, indent=4))
+        logging.info("Displayed files to be renamed.")
+        
         print("These files need to be renames to their question number: ")
         print(json.dumps(need_rename, indent=4))
+
         answer = confirmation(
             'Continue marking without renaming the above files? (y/n): ')
         if not answer:
+            logging.info('User cancelled the process. Exiting...')
             print("Exiting...")
             exit()
 
@@ -26,8 +31,10 @@ def confirmation(question):
 
     to_rename = input(question)
     if to_rename.lower() == 'n':
+        logging.info(f'User entered {to_rename}')
         return False
     elif to_rename.lower() == 'y':
+        logging.info(f'User entered {to_rename}')
         return True
     else:
         print("Please enter either 'y' or 'n'.")
@@ -41,8 +48,9 @@ def parse_testcase(parent_dir):
         with open(testcase_dir, 'r') as file:
             lines = ''.join(file.readlines()).split('\n')
     except Exception as e:
-        print(e)
-        print(f'Please create a testcase.py file in {parent_dir}')
+        logging.error("Error with the parsing of test case.")
+        logging.error(e)
+        logging.error(f'Please create a testcase.py file in {parent_dir}')
     
     testcases = {"functions": dict()}
 
@@ -74,8 +82,8 @@ def mark_question(import_statement, testcases):
         exec(import_statement)
     except Exception as e:
         error = "Error detected: Unable to import question function. The function name is probably wrong."
-        print(error)
-        print(e)
+        logging.warn(error)
+        loggin.warn(e)
         error =[error, str(e)]
         return score, error, percentage
 

@@ -1,4 +1,4 @@
-import os
+import os, logging
 from preprocessing import *
 from utility import *
 from report import report
@@ -19,6 +19,9 @@ if __name__ == "__main__":
         lab_number = 'lab' + str(lab_number)
         parent_dir = os.path.join('./labs', lab_number)
 
+        logging.basicConfig(filename=parent_dir, format='%(process)d-%(levelname)s-%(message)s')
+        logging.info('Process Start.')
+
         dirs = list(filter(lambda file: file.endswith(
             '_'), os.listdir(parent_dir)))
         if not dirs:
@@ -37,7 +40,7 @@ if __name__ == "__main__":
         for student in dirs:
             student_path = os.path.join(parent_dir, student)
 
-            solution_files = list(filter(lambda file: file.startswith('q') and file.endswith('.py')  ,os.listdir(student_path)))
+            solution_files = list(filter(lambda file: file.startswith('q') and file.endswith('.py'), os.listdir(student_path)))
 
             student_stats = {}            
 
@@ -83,7 +86,7 @@ if __name__ == "__main__":
                     stats['percentage'] = percentage
                     stats['errors'].extend(error)
                 except Exception as e:
-                    print("Error: ", e)
+                    logging.warn("Error captured: ", e)
 
                 student_stats[question] = stats
 

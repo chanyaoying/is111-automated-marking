@@ -1,6 +1,7 @@
 import os, sys, shutil
 
 
+
 def change_question_name(student_solution_dir, question_names):
     """
     student_solution_dir (str): the path with the solutions of the student
@@ -27,9 +28,6 @@ def change_question_name(student_solution_dir, question_names):
     return unable
 
 
-    print(student_name)
-
-
 def split_py_files_by_name(lab_number):
     """
     The python files have to have names
@@ -40,7 +38,7 @@ def split_py_files_by_name(lab_number):
     py_files = list(filter(lambda file: file.endswith('.py') and file != 'testcase.py',os.listdir(parent_dir)))
     
     if len(py_files) == 1:
-        print("There are no files. You need to extract the zip file.")
+        logging.warn("There are no files. You need to extract the zip file.")
         print("Exiting...")
         exit()
     
@@ -50,7 +48,6 @@ def split_py_files_by_name(lab_number):
 
     names = []
     for file in dirs_info:
-        print(file)
         names.append(file[2].strip())
 
     names = list(set(names))
@@ -60,13 +57,14 @@ def split_py_files_by_name(lab_number):
         new_path = os.path.join(parent_dir, name.replace(' ', '_'))
         try:
             os.mkdir(new_path)
-            print(f'New directory created at: {new_path}')
+            logging.info(f'New directory created at: {new_path}')
         except Exception as e:
-            print(e)
+            logging.error("There was a problem with creating a new directory to group the student solutions by name.")
+            logging.error(e)
         
         for py_file in py_files:
             if py_file.find(name) != -1:
                 src = os.path.join(parent_dir, py_file)
                 move_loc = shutil.move(src, new_path)
-                print(f'{py_file} was moved to {move_loc}')
+                logging.info(f'{py_file} was moved to {move_loc}')
 
