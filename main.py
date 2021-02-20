@@ -18,8 +18,9 @@ if __name__ == "__main__":
 
         lab_number = 'lab' + str(lab_number)
         parent_dir = os.path.join('./labs', lab_number)
-
-        logging.basicConfig(filename=parent_dir, format='%(process)d-%(levelname)s-%(message)s')
+        
+        logging_path = os.path.join(parent_dir, 'logs.log')
+        logging.basicConfig(filename=logging_path, filemode='w', format='%(process)d-%(levelname)s-%(message)s')
         logging.info('Process Start.')
 
         dirs = list(filter(lambda file: file.endswith(
