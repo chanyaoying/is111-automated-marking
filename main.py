@@ -3,16 +3,15 @@ from preprocessing import *
 from utility import *
 from report import report
 
+
 ##############################################
 # SETTINGS
 
 lab_number = 4
 current_directory = '.'
 
-
 ##############################################
 
-# if __name__ == "__main__":
 
 if lab_number < 14:
 
@@ -46,6 +45,8 @@ if lab_number < 14:
         student_stats = {}            
 
         for solution_file in solution_files: # for each question
+            
+            logging.info(f"Marking {solution_file} for {student} now.")
 
             if solution_file == "__pycache__":
                 continue
@@ -87,10 +88,13 @@ if lab_number < 14:
                 stats['percentage'] = percentage
                 stats['errors'].extend(error)
             except Exception as e:
-                logging.warn("Error captured: ", e)
+                logging.warn("Error captured: ")
+                logging.warn(e)
 
             student_stats[question] = stats
 
-        result[student] = student_stats
+        result[student.replace('_', ' ').rstrip() + ' _'] = student_stats
 
 report(result, parent_dir)
+logging.info('Process ends.')
+logging.info('========================================================================')

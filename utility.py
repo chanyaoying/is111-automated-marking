@@ -31,10 +31,10 @@ def confirmation(question):
 
     to_rename = input(question)
     if to_rename.lower() == 'n':
-        logging.info(f'User entered {to_rename}')
+        logging.info(f'User entered \'{to_rename}\'')
         return False
     elif to_rename.lower() == 'y':
-        logging.info(f'User entered {to_rename}')
+        logging.info(f'User entered \'{to_rename}\'')
         return True
     else:
         print("Please enter either 'y' or 'n'.")

@@ -1,5 +1,5 @@
 {
-    "ANDREW_CAI_ZECHEN__": {
+    "ANDREW CAI ZECHEN _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -22,7 +22,7 @@
             "percentage": 1.0
         }
     },
-    "ARYAMAN_HARISH_BELGAUMKAR__": {
+    "ARYAMAN HARISH BELGAUMKAR _": {
         "q2_1": {
             "errors": [
                 "Error detected: Unable to import question function. The function name is probably wrong.",
@@ -54,7 +54,7 @@
             "percentage": 0
         }
     },
-    "ASTON_KOH_ZHEN_YANG__": {
+    "ASTON KOH ZHEN YANG _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -77,7 +77,7 @@
             "percentage": 1.0
         }
     },
-    "BRYAN_MATTHEW_ANTONIUS__": {
+    "BRYAN MATTHEW ANTONIUS _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -100,7 +100,7 @@
             "percentage": 1.0
         }
     },
-    "CHEN_HSUAN_JU__": {
+    "CHEN HSUAN JU _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -116,7 +116,7 @@
             "percentage": 1.0
         }
     },
-    "CHUA_YI_DA__": {
+    "CHUA YI DA _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -139,7 +139,7 @@
             "percentage": 1.0
         }
     },
-    "DYLAN_DAVIDSON_WANG_YI_RONG__": {
+    "DYLAN DAVIDSON WANG YI RONG _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -155,7 +155,7 @@
             "percentage": 1.0
         }
     },
-    "EMILY_YEO_JIA_HUI__": {
+    "EMILY YEO JIA HUI _": {
         "q2_1": {
             "errors": [
                 "Error detected: Unable to import question function. The function name is probably wrong.",
@@ -177,7 +177,7 @@
             "percentage": 0
         }
     },
-    "EUGENE_WONG_WEI_HUAN__": {
+    "EUGENE WONG WEI HUAN _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -200,7 +200,7 @@
             "percentage": 1.0
         }
     },
-    "GAN_YI_HUI__": {
+    "GAN YI HUI _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -223,7 +223,7 @@
             "percentage": 1.0
         }
     },
-    "HENG_SI_KAI__": {
+    "HENG SI KAI _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -246,7 +246,7 @@
             "percentage": 1.0
         }
     },
-    "JESSICA_ANTONIA__": {
+    "JESSICA ANTONIA _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -269,7 +269,7 @@
             "percentage": 0.0
         }
     },
-    "KEVIN_CHIN_KAI_WEN__": {
+    "KEVIN CHIN KAI WEN _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
@@ -292,7 +292,7 @@
             "percentage": 1.0
         }
     },
-    "KOO_JING_YONG__": {
+    "KOO JING YONG _": {
         "q2_1": {
             "errors": [],
             "prints": 0,
