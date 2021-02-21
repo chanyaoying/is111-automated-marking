@@ -2,7 +2,6 @@ import os
 import json
 import logging
 import pandas as pd
-import numpy as np
 
 
 def report(json_data, parent_dir):
@@ -11,16 +10,16 @@ def report(json_data, parent_dir):
     with open(os.path.join(parent_dir, 'report.txt'), "w") as file:
         file.write(json.dumps(json_data, indent=4))
     logging.info(f'Text report created at {parent_dir}')
-    
+
     dfs = []
 
     for name, data in json_data.items():
-        array = np.array([[k] + (list(v.values())) for k,v in data.items()])
+        array = np.array([[k] + (list(v.values())) for k, v in data.items()])
         columns = list(list(data.values())[0].keys())
         df = pd.DataFrame(array, columns=['question'] + columns)
-        
+
         df['name'] = name
-        
+
         cols = list(df.columns[-1:]) + list(df.columns[:-1])
         df = df[cols]
         dfs.append(df)
@@ -36,7 +35,7 @@ def report(json_data, parent_dir):
     df['errors'] = df['errors'].apply(lambda n: ' | '.join(n))
 
     report_path = os.path.join(parent_dir, 'Lab Report.xlsx')
-    
+
     try:
         with pd.ExcelWriter(report_path) as writer:
             df.to_excel(writer, sheet_name='data')
@@ -46,4 +45,3 @@ def report(json_data, parent_dir):
         logging.error(e)
         logging.error("Suggested fix: Close current instances of Excel.")
         exit()
-

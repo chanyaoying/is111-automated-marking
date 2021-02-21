@@ -67,7 +67,6 @@ def parse_testcase(parent_dir):
     try:
         with open(testcase_dir, 'r') as file:
             lines = ''.join(file.readlines()).split('\n')
-    
 
         testcases = {"functions": dict()}
 
@@ -97,6 +96,8 @@ def parse_date(date_string):
     """
     Converts date_string into datetime objects for comparison.
     """
-    m, d, y, t, h12 = (n.replace(',','').strip() for n in date_string.strip().split(' '))
-    hour, minute = t[:-2], t[-2:] 
+    m, d, y, t, h12 = (n.replace(',', '').strip()
+                       for n in date_string.strip().split(' '))
+    hour, minute = t[:-2], t[-2:]
     return datetime.datetime.strptime(f"{d}/{m}/{y} {hour}:{minute} {h12}", "%d/%b/%Y %I:%M %p")
+

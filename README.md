@@ -39,7 +39,7 @@ print(bar(0) == [])
 ```
 
 ### Run main.py
-You will be prompted about whether you want to continue without renaming the displayed files.
+You will be prompted about whether you want to continue without renaming the displayed files. Remember to configure the settings at the start of main.py.
 
 ### Renaming of the student solution .py files
 This script will only process .py filenames in this format.

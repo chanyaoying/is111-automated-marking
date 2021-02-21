@@ -100,7 +100,7 @@ def change_question_name(student_solution_dir, question_names):
     student_solutions = os.listdir(student_solution_dir)
 
     unable = student_solutions.copy()
-    
+
     # to_rename has the following structure:
     # to_rename = {'q2.1': [
     #                       {'src': <some path>, 'dest': <some path>, date: <parsed date>},  <-- earlier version
@@ -108,7 +108,7 @@ def change_question_name(student_solution_dir, question_names):
     #                      ]
     #              'q2.2': [{'src': <some path>, 'dest': <some path>, date: <parsed date>}],
     #              'q3.1': ...
-    #               } 
+    #               }
     to_rename = {}
 
     for file in student_solutions:
@@ -137,10 +137,11 @@ def change_question_name(student_solution_dir, question_names):
 
     # rename them, and if earlier versions are found, store them in 'earlier_version'
     for question, metadata in to_rename.items():
-        # error handling 
+        # error handling
         if not len(metadata):
             print("An error occurred. Please check the logs.\nExiting...")
-            logging.error(f"There are no metadata for {question}.\nmetadata: {metadata}.")
+            logging.error(
+                f"There are no metadata for {question}.\nmetadata: {metadata}.")
             exit()
         elif len(metadata) > 1:
             logging.info(f'Found earlier versions of {question}.')
