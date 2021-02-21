@@ -8,7 +8,7 @@ from report import report
 ##############################################
 # SETTINGS
 
-lab_number = 4
+lab_number = 5
 current_directory = '.'
 
 ##############################################

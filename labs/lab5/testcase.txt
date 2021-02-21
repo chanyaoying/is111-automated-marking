@@ -1,0 +1,12 @@
+# 2.1
+print(compute_manhattan_distance([1,4,10,5], [5,2,8,5]) == 8)
+print(compute_manhattan_distance([1,4,10,5,12,52], [5,2,8,5,18]) == None)
+
+# 2.2
+print(generate_2d(3,4) == [[1,2,3,4],[1,2,3,4],[1,2,3,4]])
+print(generate_2d(2,5) == [[1,2,3,4,5],[1,2,3,4,5]])
+
+# 3.1
+print(sum_of_neighbors([10,20,30,40,50]) == [30,60,90,120,90])
+print(sum_of_neighbors([23]) == [23])
+print(sum_of_neighbors([56,-10,25,-32]) == [46,71,-17,-7])
