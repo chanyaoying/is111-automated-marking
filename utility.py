@@ -68,24 +68,28 @@ def parse_testcase(parent_dir):
     try:
         with open(testcase_dir, 'r') as file:
             lines = ''.join(file.readlines()).split('\n')
+    
+
+        testcases = {"functions": dict()}
+
+        for line in lines:
+            if '#' in line:
+                question_number = line[2:]
+                question_number = f"q{'_'.join(question_number.split('.'))}"
+                testcases[question_number] = []
+            elif line:
+                question_number = list(testcases.keys())[-1]
+                testcases[question_number].append(line[6:-1])
+                function = line.split('(')[1]
+                if function not in testcases['functions']:
+                    testcases['functions'][question_number] = function
+
     except Exception as e:
         logging.error("Error with the parsing of test case.")
+        print("Error with the parsing of test case. Check logs.\nExiting...")
         logging.error(e)
-        logging.error(f'Please create a testcase.py file in {parent_dir}')
-
-    testcases = {"functions": dict()}
-
-    for line in lines:
-        if '#' in line:
-            question_number = line[2:]
-            question_number = f"q{'_'.join(question_number.split('.'))}"
-            testcases[question_number] = []
-        elif line:
-            question_number = list(testcases.keys())[-1]
-            testcases[question_number].append(line[6:-1])
-            function = line.split('(')[1]
-            if function not in testcases['functions']:
-                testcases['functions'][question_number] = function
+        logging.error(f'Please create a testcase.txt file in {parent_dir}')
+        exit()
 
     return testcases
 
