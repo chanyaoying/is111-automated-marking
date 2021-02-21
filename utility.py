@@ -2,7 +2,40 @@ import os
 import sys
 import shutil
 import json
+import datetime
 import logging
+
+
+def mark_question(import_statement, testcases):
+    """
+    mark one question and output the stats
+    if error, note it as an error instead of 0
+    """
+    error = []
+    score = 0
+    percentage = 0
+
+    try:
+        exec(import_statement)
+    except Exception as e:
+        error = "Error detected: Unable to import question function. The function name is probably wrong."
+        logging.warn(error)
+        logging.warn(e)
+        error = [error, str(e)]
+        return score, error, percentage
+
+    for i in range(len(testcases)):
+        testcase = testcases[i]
+        try:
+            scoring_code = f"global correct; correct = int({testcase})"
+            exec(scoring_code)
+            score += correct
+        except Exception as e:
+            error = [f"Unable to mark test case no.{i+1}"]
+
+    percentage = score / len(testcases)
+
+    return score, error, percentage
 
 
 def confirmation(question):
@@ -47,33 +80,10 @@ def parse_testcase(parent_dir):
     return testcases
 
 
-def mark_question(import_statement, testcases):
+def parse_date(date_string):
     """
-    mark one question and output the stats
-    if error, note it as an error instead of 0
+    Converts date_string into datetime objects for comparison.
     """
-    error = []
-    score = 0
-    percentage = 0
-
-    try:
-        exec(import_statement)
-    except Exception as e:
-        error = "Error detected: Unable to import question function. The function name is probably wrong."
-        logging.warn(error)
-        logging.warn(e)
-        error = [error, str(e)]
-        return score, error, percentage
-
-    for i in range(len(testcases)):
-        testcase = testcases[i]
-        try:
-            scoring_code = f"global correct; correct = int({testcase})"
-            exec(scoring_code)
-            score += correct
-        except Exception as e:
-            error = [f"Unable to mark test case no.{i+1}"]
-
-    percentage = score / len(testcases)
-
-    return score, error, percentage
+    m, d, y, t, h12 = (n.replace(',','').strip() for n in date_string.strip().split(' '))
+    hour, minute = t[:-2], t[-2:] 
+    return datetime.datetime.strptime(f"{d}/{m}/{y} {hour}:{minute} {h12}", "%d/%b/%Y %I:%M %p")
