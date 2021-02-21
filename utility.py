@@ -38,7 +38,7 @@ def mark_question(import_statement, testcases):
             exec(scoring_code)
             score += correct
         except Exception as e:
-            error = [f"Unable to mark test case no.{i+1}"]
+            error = [f"Unable to mark test case no.{i+1}", str(e)]
 
     percentage = score / len(testcases)
 
@@ -64,7 +64,7 @@ def confirmation(question):
 
 def parse_testcase(parent_dir):
 
-    testcase_dir = os.path.join(parent_dir, 'testcase.py')
+    testcase_dir = os.path.join(parent_dir, 'testcase.txt')
     try:
         with open(testcase_dir, 'r') as file:
             lines = ''.join(file.readlines()).split('\n')
