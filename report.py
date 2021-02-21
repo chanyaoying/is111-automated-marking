@@ -37,7 +37,13 @@ def report(json_data, parent_dir):
 
     report_path = os.path.join(parent_dir, 'Lab Report.xlsx')
     
-    with pd.ExcelWriter(report_path) as writer:
-        df.to_excel(writer, sheet_name='data')
-        # df2.to_excel(writer, sheet_name='analysis')
+    try:
+        with pd.ExcelWriter(report_path) as writer:
+            df.to_excel(writer, sheet_name='data')
+            # df2.to_excel(writer, sheet_name='analysis')
+    except Exception as e:
+        print("An error occurred. Please check logs.\nExiting...")
+        logging.error(e)
+        logging.error("Suggested fix: Close current instances of Excel.")
+        exit()
 
