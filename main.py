@@ -93,10 +93,11 @@ if lab_number < 14:
 
             try:
                 # execute import statement and mark questions
-                score, error, percentage = mark_question(
+                score, error, percentage, time_taken = mark_question(
                     import_statement, question_testcases)
                 stats['score'] = score
                 stats['percentage'] = percentage
+                stats['time_taken'] = time_taken
                 stats['errors'].extend(error)
             except Exception as e:
                 logging.warn("Error captured: ")
@@ -111,7 +112,8 @@ if lab_number < 14:
                 "inputs": 0,
                 "no_of_lines": 0,
                 "score": 0,
-                "percentage": 0
+                "percentage": 0,
+                "time_taken": 0
             }
         result[student.replace('_', ' ').rstrip() + ' _'] = student_stats
 

@@ -31,6 +31,7 @@ def report(json_data, parent_dir):
 
     df.reset_index(inplace=True)
     df.drop(axis=1, labels='index', inplace=True)
+    df.rename(columns={'time_taken': "execution_time (ms)"}, inplace=True)
 
     df['errors'] = df['errors'].apply(lambda n: ' | '.join(n))
 

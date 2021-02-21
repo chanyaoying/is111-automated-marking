@@ -3,6 +3,7 @@ import sys
 import shutil
 import json
 import datetime
+import time
 import logging
 
 
@@ -11,6 +12,8 @@ def mark_question(import_statement, testcases):
     mark one question and output the stats
     if error, note it as an error instead of 0
     """
+    start_time = time.time()
+
     error = []
     score = 0
     percentage = 0
@@ -22,7 +25,11 @@ def mark_question(import_statement, testcases):
         logging.warn(error)
         logging.warn(e)
         error = [error, str(e)]
-        return score, error, percentage
+
+        end_time = time.time()
+        time_taken = end_time - start_time
+
+        return score, error, percentage, time_taken * 1000
 
     for i in range(len(testcases)):
         testcase = testcases[i]
@@ -35,7 +42,10 @@ def mark_question(import_statement, testcases):
 
     percentage = score / len(testcases)
 
-    return score, error, percentage
+    end_time = time.time()
+    time_taken = end_time - start_time
+
+    return score, error, percentage, time_taken * 1000
 
 
 def confirmation(question):
