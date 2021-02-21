@@ -19,16 +19,16 @@ def parse(student_path, solution_file):
     # opens the original and checks for prints and inputs
     with open(solution_file_path, 'r', errors='ignore') as file:
         for line in file.readlines():
-            if line.find("print") != -1:
+            if line.find("print()") != -1:
                 prints += 1
                 # replace that line with print() with pass
                 code += (line[:line.find('print')] + 'pass\n')
-            elif line.find("input") != -1:
+            elif line.find("input()") != -1:
                 inputs += 1
                 code += 'pass\n'  # replace that line with input() with pass
-            elif "quit" in line:
+            elif "quit()" in line:
                 code += 'pass\n'
-            elif "exit" in line:
+            elif "exit()" in line:
                 code += 'pass\n'
             else:
                 no_of_lines += 1
