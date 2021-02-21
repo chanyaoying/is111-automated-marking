@@ -10,7 +10,6 @@ import logging
 def mark_question(import_statement, testcases):
     """
     mark one question and output the stats
-    if error, note it as an error instead of 0
     """
     start_time = time.time()
 
