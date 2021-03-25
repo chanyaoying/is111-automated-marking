@@ -2,6 +2,7 @@ import os
 import json
 import logging
 import pandas as pd
+import numpy as np
 
 
 def report(json_data, parent_dir):

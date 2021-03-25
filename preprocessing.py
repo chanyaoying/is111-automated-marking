@@ -22,14 +22,14 @@ def parse(student_path, solution_file):
             if "print(" in line or "print (" in line:
                 prints += 1
                 # replace that line with print() with pass
-                code += 'pass\n'
+                code += (line[:line.index('print(')] + 'pass\n')
             elif "input(" in line or "input (" in line:
                 inputs += 1
-                code += 'pass\n'  # replace that line with input() with pass
+                code += (line[:line.index('input(')] + 'pass\n')  # replace that line with input() with pass
             elif "quit(" in line:
-                code += 'pass\n'
+                code += (line[:line.index('quit(')] + 'pass\n')
             elif "exit(" in line:
-                code += 'pass\n'
+                code += (line[:line.index('exit(')] + 'pass\n')
             else:
                 no_of_lines += 1
                 code += line
